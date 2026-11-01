@@ -4,6 +4,7 @@ import { CardContext } from "@/Context/CardContext";
 import { useContext } from "react";
 import { Link } from "react-router";
 import { toast } from "sonner";
+import publicAsset from "@/lib/publicAsset.js";
 const ProductCard = ({ description, name,sellers, slug, images, _id }) => {
     const { items, updateItem, addItem, isLoadingAction } = useContext(CardContext);
     const quantity = items.find((item) => item.productId == _id)?.quantity||0;
@@ -30,7 +31,7 @@ const ProductCard = ({ description, name,sellers, slug, images, _id }) => {
         <article className="w-full relative space-y-3 flex pl-2 h-115 justify-between flex-col border-2 dark:border-dark-border border-zinc-400 rounded-2xl p-3">
             <Link className="absolute size-full" to={`/product/${slug}`} />
             <header className="h-34.5 flex-center w-full">
-                <img src={images.length ? `https://shopino.pachim.run/images/products/${images[0]}` : "/Photos/DefaultImage.png"} className="w-full h-60 dark:bg-dark-border bg-white block rounded-lg mt-25" />
+                <img src={images.length ? `https://shopino.pachim.run/images/products/${images[0]}` : publicAsset("Photos/DefaultImage.png")} className="w-full h-60 dark:bg-dark-border bg-white block rounded-lg mt-25" />
             </header>
             <main className="h-full space-y-2.5">
                 <p className="font-bold text-[16px] mt-25">{name}</p>

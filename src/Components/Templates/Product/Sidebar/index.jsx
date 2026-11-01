@@ -7,6 +7,7 @@ import Button_3 from "@/Components/Common/Buttons/Button_3";
 import { CardContext } from "@/Context/CardContext";
 import { toast } from "sonner";
 import ChangeQuantity from "@/Components/Common/Cards/ProductCard/Fragments/ChangeQuantity";
+import publicAsset from "@/lib/publicAsset.js";
 const Sidebar = ({ product }) => {
     const { addItem, isLoadingAction, items ,updateItem} = useContext(CardContext);
     const quantity = items.find((item) => item.productId == product._id)?.quantity||0;
@@ -31,7 +32,7 @@ const Sidebar = ({ product }) => {
     };
     return (
         <aside className="order-1 col-span-4 min-[555px]:col-span-2 min-[555px]:sticky min-[555px]:top-32 min-[885px]:col-span-1 w-full rounded-xl border-2 border-neutral-200 dark:border-dark-border bg-zinc-200 dark:bg-dark-bg2 max-h-max p-5 space-y-5">
-            <MiniProduct name={product.name} src={product?.images[0] ? `https://shopino.pachim.run/images/products/${product.images[0]}` : "/Photos/DefaultImage.png"} />
+            <MiniProduct name={product.name} src={product?.images[0] ? `https://shopino.pachim.run/images/products/${product.images[0]}` : publicAsset("Photos/DefaultImage.png")} />
             <NoticeDescription />
             <Price price={Number(product?.sellers[0]?.price).toLocaleString("fa-IR")} />
             {!quantity? (

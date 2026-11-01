@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 const particles = [
   'left-[11%] top-[17%] size-1 [animation-delay:-0.8s]',
   'left-[48%] top-[8%] size-1.5 [animation-delay:-1.8s]',
@@ -28,10 +28,10 @@ export default function Forbidden({userName = 'کاربر واردشده',}) {
       <section aria-labelledby="forbidden-title" className={`relative w-full max-w-280 overflow-hidden border border-[#ffeecb]/15 bg-[#211f1e]/80 shadow-[0_28px_85px_rgba(0,0,0,0.42),inset_0_1px_rgba(255,255,255,0.045)] backdrop-blur-xl transition-[opacity,transform,filter] duration-700 ease-out sm:rounded-sm translate-y-0 scale-100 opacity-100`}>
         <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#ffcc7a]/25 to-transparent" />
         <div className="flex items-center justify-between border-b border-[#ffeecb]/15 px-5 py-4 sm:px-9 lg:px-13">
-          <a href="/" aria-label="بازگشت به خانه" className="inline-flex items-center gap-2.5 text-[11px] font-medium tracking-[0.12em] text-[#eee7da] outline-none transition-opacity hover:opacity-70 focus-visible:ring-2 focus-visible:ring-[#ffc762] focus-visible:ring-offset-4 focus-visible:ring-offset-[#211f1e]">
+          <Link to="/" aria-label="بازگشت به خانه" className="inline-flex items-center gap-2.5 text-[11px] font-medium tracking-[0.12em] text-[#eee7da] outline-none transition-opacity hover:opacity-70 focus-visible:ring-2 focus-visible:ring-[#ffc762] focus-visible:ring-offset-4 focus-visible:ring-offset-[#211f1e]">
             <span className="flex skew-x-[-16deg] gap-0.75" aria-hidden="true"><i className="block h-3.5 w-1 bg-[#ffc762]" /><i className="-mt-0.75 block h-4.75 w-1 bg-[#ff6c3b]" /><i className="block h-3.5 w-1 bg-[#f4e6c9]" /></span>
             <span dir="ltr">Novix Web</span>
-          </a>
+          </Link>
           <div className="inline-flex items-center gap-2 rounded-full border border-white/[.07] bg-white/4 px-2.5 py-1.5 text-[11px] text-[#c5beb2]">
             <span className="size-1.5 rounded-full bg-[#abcfb7] shadow-[0_0_0_3px_rgba(171,207,183,0.1)]" />
             <span>{userName}</span>

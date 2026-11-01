@@ -5,6 +5,7 @@ import clsx from "clsx";
 import Button_5 from "@/Components/Common/Buttons/Button_5";
 import SideBar from "@/Components/Common/Header/Fragments/SideBar";
 import CategoryMegaMenu from "@/Components/Common/Header/Fragments/CategoryMegaMenu";
+import publicAsset from "@/lib/publicAsset.js";
 const Header = () => {
     const [positionHeader, setPositionHeader] = useState(false);
     useEffect(() => {
@@ -19,7 +20,7 @@ const Header = () => {
     return (
         <header className="h-35">
             <nav className={clsx("fixed inset-x-0 top-0 z-2000 h-23 border-2 border-slate-300 px-5 shadow-[0_0_20px_2px_#03554e] transition-all duration-500 dark:border-dark-border dark:bg-dark-bg2/85 bg-yellow-200/60 hover:bg-yellow-200 hover:dark:bg-dark-bg2 flex-between", positionHeader ? "mx-auto h-16! max-w-full rounded-b-2xl" : "container top-6 rounded-2xl")}>
-                <img className="hidden! w-20 object-cover lg:block!" src="/Photos/logo.png" alt="i cant open this logo" />
+                <img className="hidden! w-20 object-cover lg:block!" src={publicAsset("Photos/logo.png")} alt="i cant open this logo" />
                 <div className="hidden! gap-4! lg:flex!">
                     <CategoryMegaMenu position={positionHeader}/>
                     <div className="h-4 w-px bg-black/10 dark:bg-white" />

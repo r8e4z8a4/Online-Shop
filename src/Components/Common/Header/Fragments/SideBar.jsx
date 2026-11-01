@@ -7,6 +7,7 @@ import { useContext } from "react";
 import Button_2 from "@/Components/Common/Buttons/Button_2";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import ToggleButton from "@/Components/Common/Buttons/ToggleButton";
+import publicAsset from "@/lib/publicAsset.js";
 const SideBar = () => {
     const [isOpenMenu, toggle] = useToggle(false);
     const {theme,toggleTheme}=useContext(ThemeContext)
@@ -16,7 +17,7 @@ const SideBar = () => {
             <aside className={clsx("fixed space-y-10 top-0 left-0 z-60 h-screen w-55 rounded-r-2xl dark:bg-dark-bg1 bg-white p-6 transition-transform duration-300", isOpenMenu ? "translate-x-0 shadow-[0_0_20px_2px_#03554e]" : "-translate-x-full")}>
                 <div className="flex-between">
                     <Button_2 className={'border-2 border-slate-300 dark:border-dark-border size-10 flex-center! rounded-full'} handler={toggleTheme}>{theme==='light'?<BsFillMoonStarsFill/>:<TbSunHighFilled/>}</Button_2>
-                    <img className="w-20 object-cover block!" src="/Photos/logo.png" alt="i cant open this logo" />
+                    <img className="w-20 object-cover block!" src={publicAsset("Photos/logo.png")} alt="i cant open this logo" />
                 </div>
                 <div className="space-y-3">
                     <Button_5 handler={toggle} className="flex-ic gap-3" to="/">

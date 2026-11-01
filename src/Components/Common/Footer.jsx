@@ -1,4 +1,6 @@
 import Cantact from "@/Components/Common/Buttons/Contact";
+import { Link } from "react-router";
+import publicAsset from "@/lib/publicAsset.js";
 export default function Footer() {
     return (
         <footer className="text-slate-200" dir="rtl">
@@ -47,24 +49,24 @@ export default function Footer() {
                         <h3 className="text-lg font-bold text-white">دسترسی سریع</h3>
                         <ul className="space-y-2 text-sm">
                             <li>
-                                <a href="/about-us" className="text-slate-400 transition-colors hover:text-white">
+                                <Link to="/about-us" className="text-slate-400 transition-colors hover:text-white">
                                     درباره ما
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/contact-us" className="text-slate-400 transition-colors hover:text-white">
+                                <Link to="/contact-us" className="text-slate-400 transition-colors hover:text-white">
                                     تماس با ما
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/" className="text-slate-400 transition-colors hover:text-white">
+                                <Link to="/" className="text-slate-400 transition-colors hover:text-white">
                                     فرصت‌های شغلی
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href="/" className="text-slate-400 transition-colors hover:text-white">
+                                <Link to="/" className="text-slate-400 transition-colors hover:text-white">
                                     قوانین و مقررات
-                                </a>
+                                </Link>
                             </li>
                             <li>
                                 <a href="#" className="text-slate-400 transition-colors hover:text-white">
@@ -105,13 +107,13 @@ export default function Footer() {
                 <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
                     <div className="flex flex-wrap items-center justify-center gap-4">
                         <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-slate-800 p-2">
-                            <img src="/Photos/Electronic-Trust-Symbol.jpg" alt="نماد اعتماد الکترونیک" className="size-full rounded-lg" />
+                            <img src={publicAsset("Photos/Electronic-Trust-Symbol.jpg")} alt="نماد اعتماد الکترونیک" className="size-full rounded-lg" />
                         </div>
                         <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-slate-800 p-2">
-                            <img src="/Photos/samandehi-logo.png" alt="نماد ساماندهی" className="size-full rounded-lg" />
+                            <img src={publicAsset("Photos/samandehi-logo.png")} alt="نماد ساماندهی" className="size-full rounded-lg" />
                         </div>
                         <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-slate-800 p-2">
-                            <img src="/Photos/thumb-up-like-icon.webp" alt="نماد رضایت" className="size-full rounded-lg" />
+                            <img src={publicAsset("Photos/thumb-up-like-icon.webp")} alt="نماد رضایت" className="size-full rounded-lg" />
                         </div>
                     </div>
 

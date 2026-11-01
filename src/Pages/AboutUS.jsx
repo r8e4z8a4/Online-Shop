@@ -6,6 +6,7 @@ import aboutUsData from "../Components/Templates/AboutUS/settings/data";
 import { Link } from "react-router";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Button_3 from "@/Components/Common/Buttons/Button_3";
+import publicAsset from "@/lib/publicAsset.js";
 const AboutUSPage = () => {
     return (
         <main id="about-us" className="container my-10">
@@ -13,7 +14,7 @@ const AboutUSPage = () => {
             <div className="w-full mt-10 gap-10 grid grid-cols-1 md:grid-cols-2">
                 <Accordion options={aboutUsData} />
                 <div className="order-1 md:order-2">
-                    <img src="/Photos/about-us.png" />
+                    <img src={publicAsset("Photos/about-us.png")} />
                 </div>
             </div>
             <div className="my-14">

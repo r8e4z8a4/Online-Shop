@@ -1,5 +1,6 @@
 import ProductVariants from "./Fragments/ProductVariants";
 import UsefulButtons from "./Fragments/UsefulButtons";
+import publicAsset from "@/lib/publicAsset.js";
 
 const HeroDetails = ({ product }) => {
     return (
@@ -10,7 +11,7 @@ const HeroDetails = ({ product }) => {
                         <UsefulButtons />
                     </div>
                     <div className="flex-wrap flex md:grid md:grid-cols-2 gap-3.5">
-                        <img src={product?.images[0]?`https://shopino.pachim.run/images/products/${product.images[0]}`:'/Photos/DefaultImage.png'} alt="icant open this photo" className="size-full max-h-110 rounded-xl object-cover bg-zinc-300 dark:bg-dark-border" />
+                        <img src={product?.images[0]?`https://shopino.pachim.run/images/products/${product.images[0]}`:publicAsset("Photos/DefaultImage.png")} alt="icant open this photo" className="size-full max-h-110 rounded-xl object-cover bg-zinc-300 dark:bg-dark-border" />
                         <div className="space-y-7">
                             <div className="space-y-5">
                                 <div className="space-y-2">

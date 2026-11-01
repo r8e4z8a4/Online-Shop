@@ -3,6 +3,7 @@ import SectionTitle from "../Components/Common/SectionTitle";
 import InputField from "../Components/Templates/ContactUS/InputField";
 import Form_2 from "@/Components/Common/Forms/Form_2";
 import Map from "@/Components/Templates/ContactUS/Map";
+import publicAsset from "@/lib/publicAsset.js";
 const ContactUSPage = () => {
     return (
         <main className="my-20 container" id="contact-us">
@@ -13,7 +14,7 @@ const ContactUSPage = () => {
                     <Form_2/>
                 </div>
                 <div className="w-full col-span-2 order-1 md:order-2 md:col-span-1">
-                    <img className="object-cover scale-80" src="/Photos/contact-us.png" />
+                    <img className="object-cover scale-80" src={publicAsset("Photos/contact-us.png")} />
                 </div>
             </div>
             <div className="space-y-10 my-10">
