@@ -1,0 +1,50 @@
+import { BiEdit } from "react-icons/bi";
+import { FaEllipsisVertical, FaTrash } from "react-icons/fa6";
+import Dropdown from "../../../common/Dropdown";
+import DropdownItem from "../../../common/Dropdown/DropdownItem";
+import Modal from "../../../common/Modal";
+import { useToggle } from "react-use";
+import CreateSubCategoryModal from "@/Components/Templates/Dashboard/templates/moderator/categories/CreateSubCategoryModal";
+import DeleteSubCategoryModal from "@/Components/Templates/Dashboard/common/ModelContents/DeleteSubCategoryModal";
+const ManageSubCategoryDropdown = ({ fetchSubSubCategories, subcategory,CategoryData ,fetchCategories }) => {
+    const [isOpenForm, OpenFormtoggle] = useToggle(false);
+    const [isOpenModal, Modaltoggle] = useToggle(false);
+    const onSuccess=()=>{
+        fetchCategories(true)        
+        fetchSubSubCategories(true)            
+    }
+    return (
+        <>
+            <Dropdown
+                Trigger={
+                    <button className="text-lg size-10 flex items-center justify-center">
+                        <FaEllipsisVertical />
+                    </button>
+                }
+            >
+                <DropdownItem
+                    onClick={() => {
+                        Modaltoggle();
+                    }}
+                >
+                    <FaTrash className="text-base!" />
+                    <span>حذف دسته بندی </span>
+                </DropdownItem>
+                <DropdownItem
+                    onClick={() => {
+                        OpenFormtoggle();
+                    }}
+                >
+                    <BiEdit className="text-xl!" />
+                    <span>ویرایش دسته بندی </span>
+                </DropdownItem>
+            </Dropdown>
+            <Modal isOpen={isOpenModal} onOpenChange={() => Modaltoggle(false)} title="حذف دسته بندی">
+                <DeleteSubCategoryModal fetchCategories={fetchCategories} fetchSubSubCategories={fetchSubSubCategories} subcategory={subcategory} onClose={Modaltoggle} />
+            </Modal>
+            <CreateSubCategoryModal subcategory={subcategory} isOpen={isOpenForm} onClose={() => OpenFormtoggle()} onSuccess={onSuccess} data={CategoryData} fetchcategory={fetchCategories} />
+        </>
+    );
+};
+
+export default ManageSubCategoryDropdown;
